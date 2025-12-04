@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 
 public class ControllerClass {
 	@FXML
-    private TextField displayField;//ディスプレイ
+    private TextField displayField;//ディスプレイtest
 	@FXML
     private TextField symbolField; // ディスプレイ上の小ウインドウ
 	
