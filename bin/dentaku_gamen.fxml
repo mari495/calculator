@@ -9,7 +9,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerClass">
+<VBox prefHeight="400.0" prefWidth="640.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerClass">
+
 
   <children>
 
@@ -59,43 +60,51 @@
       <children>
 
         <!-- 画面表示 -->
-        <TextField fx:id="displayField" layoutX="13" layoutY="7" prefHeight="75" prefWidth="616" />
+        <TextField fx:id="displayField" layoutX="13" layoutY="7" prefHeight="66.0" prefWidth="616" />
         <TextField fx:id="symbolField" layoutX="14" layoutY="7" prefHeight="19" prefWidth="25" />
 
         <!-- 数字 -->
-        <Button fx:id="button_0" layoutX="27.0" layoutY="256.0" onAction="#handleNumber" prefHeight="43.0" prefWidth="67.0" text="0" />
-        <Button fx:id="button_00" layoutX="102.0" layoutY="256.0" onAction="#handleNumber" prefHeight="43.0" prefWidth="67.0" text="00" />
-        <Button layoutX="179.0" layoutY="256.0" onAction="#handleDot" prefHeight="43.0" prefWidth="67.0" text="・" />
+        <Button fx:id="button_0" layoutX="140.0" layoutY="256.0" onAction="#handleNumber" prefHeight="43.0" prefWidth="67.0" styleClass="number-button" text="0" />
+        <Button fx:id="button_00" layoutX="207.0" layoutY="255.0" onAction="#handleNumber" prefHeight="59.0" prefWidth="75.0" styleClass="number-button" text="00" />
+        <Button layoutX="286.0" layoutY="256.0" onAction="#handleDot" prefHeight="43.0" prefWidth="67.0" styleClass="number-button" text="・" />
 
-        <Button fx:id="button_1" layoutX="27.0" layoutY="206.0" onAction="#handleNumber" prefHeight="43.0" prefWidth="67.0" text="1" />
-        <Button fx:id="button_2" layoutX="100.0" layoutY="203.0" onAction="#handleNumber" prefHeight="49.0" prefWidth="67.0" text="2" />
-        <Button fx:id="button_3" layoutX="179.0" layoutY="202.0" onAction="#handleNumber" prefHeight="49.0" prefWidth="67.0" text="3" />
 
-        <Button fx:id="button_4" layoutX="27.0" layoutY="154.0" onAction="#handleNumber" prefHeight="49.0" prefWidth="67.0" text="4" />
-        <Button fx:id="button_5" layoutX="100.0" layoutY="152.0" onAction="#handleNumber" prefHeight="49.0" prefWidth="67.0" text="5" />
-        <Button fx:id="button_6" layoutX="179.0" layoutY="152.0" onAction="#handleNumber" prefHeight="49.0" prefWidth="67.0" text="6" />
 
-        <Button fx:id="button_7" layoutX="27" layoutY="85" onAction="#handleNumber" prefHeight="59.0" prefWidth="67.0" text="7" />
-        <Button fx:id="button_8" layoutX="102.0" layoutY="85.0" onAction="#handleNumber" prefHeight="59.0" prefWidth="67.0" text="8" />
-        <Button fx:id="button_9" layoutX="179.0" layoutY="85.0" onAction="#handleNumber" prefHeight="59.0" prefWidth="67.0" text="9" />
+        <Button fx:id="button_1" layoutX="140.0" layoutY="200.0" onAction="#handleNumber" prefHeight="43.0" prefWidth="67.0" styleClass="number-button" text="1" />
+        <Button fx:id="button_2" layoutX="211.0" layoutY="199.0" onAction="#handleNumber" prefHeight="59.0" prefWidth="67.0" styleClass="number-button" text="2" />
+        <Button fx:id="button_3" layoutX="274.0" layoutY="200.0" onAction="#handleNumber" prefHeight="49.0" prefWidth="67.0" styleClass="number-button" text="3" />
+
+        <Button fx:id="button_4" layoutX="140.0" layoutY="139.0" onAction="#handleNumber" prefHeight="49.0" prefWidth="67.0" styleClass="number-button" text="4" />
+        <Button fx:id="button_5" layoutX="207.0" layoutY="139.0" onAction="#handleNumber" prefHeight="49.0" prefWidth="67.0" styleClass="number-button" text="5" />
+        <Button fx:id="button_6" layoutX="274.0" layoutY="139.0" onAction="#handleNumber" prefHeight="49.0" prefWidth="67.0" styleClass="number-button" text="6" />
+
+        <Button fx:id="button_7" layoutX="140.0" layoutY="79.0" onAction="#handleNumber" prefHeight="59.0" prefWidth="67.0" styleClass="number-button" text="7" />
+        <Button fx:id="button_8" layoutX="207.0" layoutY="79.0" onAction="#handleNumber" prefHeight="59.0" prefWidth="67.0" styleClass="number-button" text="8" />
+        <Button fx:id="button_9" layoutX="274.0" layoutY="79.0" onAction="#handleNumber" prefHeight="59.0" prefWidth="67.0" styleClass="number-button" text="9" />
 
         <!-- 演算子 -->
-        <Button fx:id="button_tasu" layoutX="353.0" layoutY="198.0" onAction="#handleOperator" prefHeight="103.0" prefWidth="67.0" text="+" />
-        <Button fx:id="button_hiku" layoutX="435" layoutY="202" onAction="#handleOperator" prefHeight="49.0" prefWidth="59.0" text="-" />
-        <Button fx:id="button_kakeru" layoutX="357.0" layoutY="149.0" onAction="#handleOperator" prefHeight="49.0" prefWidth="59.0" text="×" />
-        <Button fx:id="button_waru" layoutX="434.0" layoutY="149.0" onAction="#handleOperator" prefHeight="49.0" prefWidth="59.0" text="÷" />
+        <Button fx:id="button_tasu" layoutX="353.0" layoutY="201.0" onAction="#handleOperator" prefHeight="109.0" prefWidth="67.0" styleClass="number-button" text="+" />
+        <Button fx:id="button_hiku" layoutX="431.0" layoutY="199.0" onAction="#handleOperator" prefHeight="49.0" prefWidth="59.0" styleClass="number-button" text="-" />
+        <Button fx:id="button_kakeru" layoutX="357.0" layoutY="139.0" onAction="#handleOperator" prefHeight="49.0" prefWidth="59.0" styleClass="number-button" text="×" />
+        <Button fx:id="button_waru" layoutX="427.0" layoutY="139.0" onAction="#handleOperator" prefHeight="49.0" prefWidth="59.0" styleClass="number-button" text="÷" />
 
         <!-- = -->
-        <Button fx:id="button_wa" layoutX="434" layoutY="259" onAction="#handleEqual" prefHeight="43.0" prefWidth="67.0" text="=" />
+        <Button fx:id="button_wa" layoutX="431.0" layoutY="256.0" onAction="#handleEqual" prefHeight="43.0" prefWidth="59.0" styleClass="number-button" text="=" />
 
         <!-- 機能ボタン -->
-        <Button fx:id="button_clear" layoutX="28" layoutY="315" onAction="#handleClear" prefHeight="59.0" prefWidth="601.0" text="AC" />
-        <Button fx:id="button_CE" layoutX="530" layoutY="259" onAction="#handleCE" prefHeight="59.0" prefWidth="75.0" text="CE" />
-        <Button fx:id="button_puramai" layoutX="530" layoutY="201" onAction="#handlePlusMinus" prefHeight="49.0" prefWidth="75.0" text="+/-" />
-        <Button fx:id="button_zeikomi" layoutX="353.0" layoutY="85.0" onAction="#handleZeikomi" prefHeight="59.0" prefWidth="67.0" text="税込" />
-        <Button fx:id="button_zeinuki" layoutX="434" layoutY="85" onAction="#handleZeinuki" prefHeight="59.0" prefWidth="59.0" text="税抜" />
-        <Button fx:id="button_delite" layoutX="530" layoutY="144" onAction="#handleDelete" prefHeight="43.0" prefWidth="67.0" text="→" />
-        <Button fx:id="button_ruto" layoutX="530" layoutY="85" onAction="#handleRoot" prefHeight="49.0" prefWidth="59.0" text="√" />
+        <Button fx:id="button_clear" layoutX="28" layoutY="315" onAction="#handleClear" prefHeight="59.0" prefWidth="601.0" styleClass="number-button" text="AC" />
+        <Button fx:id="button_CE" layoutX="51.0" layoutY="247.0" onAction="#handleCE" prefHeight="59.0" prefWidth="75.0" styleClass="number-button" text="CE" />
+        <Button fx:id="button_puramai" layoutX="47.0" layoutY="188.0" onAction="#handlePlusMinus" prefHeight="43.0" prefWidth="83.0" styleClass="number-button" text="+/-" />
+        <Button fx:id="button_zeikomi" layoutX="353.0" layoutY="79.0" onAction="#handleZeikomi" prefHeight="59.0" prefWidth="95.0" styleClass="number-button" text="税込" />
+        <Button fx:id="button_zeinuki" layoutX="449.0" layoutY="79.0" onAction="#handleZeinuki" prefHeight="59.0" prefWidth="95.0" styleClass="number-button" text="税抜" />
+        <Button fx:id="button_delite" layoutX="55.0" layoutY="122.0" onAction="#handleDelete" prefHeight="43.0" prefWidth="67.0" styleClass="number-button" text="→" />
+        <Button fx:id="button_ruto" layoutX="550.0" layoutY="79.0" onAction="#handleRoot" prefHeight="59.0" prefWidth="67.0" styleClass="number-button" text="√" />
+		
+		
+		
+		
+
+		
 
       </children>
     </AnchorPane>

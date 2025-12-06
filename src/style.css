@@ -1,0 +1,46 @@
+/* ===== 電卓全体の背景 ===== */
+.root {
+    -fx-background-color: black;
+}
+
+/* ===== ディスプレイ（数字表示） ===== */
+#displayField {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 48px;
+    -fx-alignment: CENTER_RIGHT;
+    -fx-padding: 10 20 10 10;
+}
+
+/* ===== 小窓フィールド ===== */
+#symbolField {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffaa00;
+    -fx-font-size: 20px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* ===== 数字ボタン ===== */
+.number-button {
+    -fx-background-color: #333333;
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-background-radius: 40;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 6, 0.2, 0, 2);
+}
+
+/* ===== 演算子ボタン（＋ − × ÷） ===== */
+.operator-button {
+    -fx-background-color: #ff9f0a;  /* iPhone 電卓のオレンジ */
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-background-radius: 40;
+}
+
+/* ===== 機能ボタン（AC ± DEL など） ===== */
+.function-button {
+    -fx-background-color: #a5a5a5;
+    -fx-text-fill: black;
+    -fx-font-size: 24px;
+    -fx-background-radius: 40;
+}

@@ -12,6 +12,7 @@ public class Main extends Application {
         getClass().getResource("dentaku_gamen.fxml")
       );
       Scene scene = new Scene(root);
+      scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
       primaryStage.setTitle("Calculator_nakasone");
       primaryStage.setScene(scene);
       primaryStage.show();

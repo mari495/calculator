@@ -1,7 +1,11 @@
+
+import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.media.AudioClip;
+import javafx.util.Duration;
 
 public class ControllerClass {
 
@@ -13,6 +17,8 @@ public class ControllerClass {
 
     // ロジッククラス（モデル）
     private CalcLogic calc = new CalcLogic();
+    
+    private AudioClip clickSound;
 
 
     // ============================
@@ -20,7 +26,9 @@ public class ControllerClass {
     // ============================
     @FXML
     private void handleNumber(ActionEvent e) {
+    	playSound(); 
         Button btn = (Button) e.getSource();
+        animateButton(btn);
         String num = btn.getText();   // "0" "1" "2" … "00" "."
         System.out.println("押された数字 = " + num);
   
@@ -36,8 +44,11 @@ public class ControllerClass {
     // ============================
     @FXML
     private void handleOperator(ActionEvent e) {
+    	playSound(); 
         Button btn = (Button) e.getSource();
+        animateButton(btn);
         String op = btn.getText(); // "+", "-", "×", "÷"
+        
 
         calc.setOperator(op);
         symbolField.setText(op);
@@ -50,6 +61,7 @@ public class ControllerClass {
     // ============================
     @FXML
     private void handleEqual() {
+    	playSound(); 
         calc.calculate();
         displayField.setText(calc.getDisplay());
         symbolField.setText("=");
@@ -80,6 +92,7 @@ public class ControllerClass {
     // ============================
     @FXML
     private void handlePlusMinus() {
+    	playSound(); 
         calc.togglePlusMinus();
         displayField.setText(calc.getDisplay());
     }
@@ -90,6 +103,7 @@ public class ControllerClass {
     // ============================
     @FXML
     private void handleDelete() {
+    	playSound(); 
         calc.deleteOne();
         displayField.setText(calc.getDisplay());
     }
@@ -100,6 +114,7 @@ public class ControllerClass {
     // ============================
     @FXML
     private void handleClear() {
+    	playSound(); 
         calc.clear();
         displayField.setText(calc.getDisplay());
         symbolField.setText("");
@@ -109,6 +124,7 @@ public class ControllerClass {
     // ============================
     @FXML
     private void handleCE() {
+    	playSound(); 
         displayField.setText("");
     }
 
@@ -118,6 +134,7 @@ public class ControllerClass {
     // ============================
     @FXML
     private void handleZeikomi() {
+    	playSound(); 
         calc.calcTaxIncluded();
         displayField.setText(calc.getDisplay());
     }
@@ -128,6 +145,7 @@ public class ControllerClass {
     // ============================
     @FXML
     private void handleZeinuki() {
+    	playSound(); 
         calc.priceWithoutTax();
         displayField.setText(calc.getDisplay());
     }
@@ -138,8 +156,37 @@ public class ControllerClass {
     // ============================
     @FXML
     private void handleRoot() {
+    	playSound(); 
         calc.calcSqrt();
         displayField.setText(calc.getDisplay());
     }
+    
+    // ============================
+    //ボタンを押したときのアニメーション追加
+    // ============================
+    private void animateButton(Button btn) {
+    	playSound(); 
+        ScaleTransition st = new ScaleTransition(Duration.millis(90.0), btn);
+        st.setFromX(1.0);
+        st.setFromY(1.0);
+        st.setToX(0.88);
+        st.setToY(0.88);
+        st.setAutoReverse(true);
+        st.setCycleCount(2);
+        st.play();
+    }
+    
+    @FXML
+    public void initialize() {
+        clickSound = new AudioClip(getClass().getResource("/sounds/click.mp3").toString());
+    }
+    
+    private void playSound() {
+        if (clickSound != null) {
+            clickSound.play();
+        }
+    }
+    
+
 
 }
